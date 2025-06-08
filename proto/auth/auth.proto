@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "github.com/lxstorion/auth-protos;auth";
+
+service Auth {
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+}
+
+message RegisterRequest {
+    string username = 1;
+    string email = 2;
+    string password = 3;
+}
+
+message RegisterResponse {
+    int64 user_id = 1;
+}
