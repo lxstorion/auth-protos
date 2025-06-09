@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package health;
+
+option go_package = "github.com/lxstorion/auth-protos;health";
+
+service Health {
+    rpc CheckHealthStatus (HealthRequest) returns (HealthResponse);
+}
+
+message HealthRequest {
+
+}
+
+message HealthResponse {
+    string status = 1;
+}
